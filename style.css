@@ -84,7 +84,6 @@ nav {
   border-radius: 4px;
   color: var(--text);
   height: 40px;
-  padding: 12px 0px;
 }
 
 nav .btn {
@@ -168,6 +167,7 @@ nav .btn {
 
 .btn__sectionEnd {
   width: 260px;
+  margin: 0px auto;
 }
 
 .productsSection {
@@ -232,10 +232,92 @@ footer:after {
   position: absolute;
   width: 100%;
   height: 100px;
-  top: -50px;
+  top: -63px;
   left: 0;
-  background: #707070;
+  background: var(--gray);
   transform-origin: top right;
   transform: skewY(-6deg);
   z-index: -1;
+}
+
+.item {
+  width: 392px;
+  display: flex;
+  margin: 30px auto 0px;
+}
+
+.productsList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-description {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 9px;
+  font-size: 12px;
+  margin-left: 23px;
+}
+
+.productsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item__image {
+  border: 1px solid var(--gray);
+  height: 129px;
+  width: 169px;
+}
+
+.item__description {
+  display: none;
+}
+
+.item__name {
+  font-size: 14px;
+}
+
+.item__price, .item__btn {
+  font-size: 16px;
+}
+
+.item__btn {
+  height: 30px;
+}
+
+@media only screen and (min-width: 576px) {
+  .container {
+      max-width: 540px;
+  }
+
+  header:after {
+    transform: skewY(13deg);
+  }
+
+  footer:after {
+    transform: skewY(-2deg);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+      max-width: 720px;
+  }
+
+  header:after {
+    transform: skewY(10deg);
+  }
+}
+
+@media only screen and (min-width: 992px){
+  .container {
+    max-width: 960px;
+  }
+
+  header:after {
+    transform: skewY(6deg);
+  }
 }
