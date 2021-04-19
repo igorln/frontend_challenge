@@ -53,16 +53,16 @@
         <label for="cpf">
           CPF:
         </label>
-        <input type="number" name="cpf" id="cpf" required>
+        <input type="text" name="cpf" id="cpf" required>
         <br>
         <br>
         <div class="radioGroup">
           <div>
-            <input type="radio" id="male" name="gender" value="male">
+            <input type="radio" id="male" name="gender" value="male" required>
             <label for="male">Masculino</label>
           </div>
           <div>
-            <input type="radio" id="female" name="gender" value="female">
+            <input type="radio" id="female" name="gender" value="female" required>
             <label for="female">Feminino</label>
           </div>
         </div>
@@ -95,15 +95,15 @@
             <label for="name">
               Nome do seu amigo:
             </label>
-            <input type="text" name="name" id="name" required>
+            <input type="text" name="name" id="friendName" >
           </div>
           <div>
             <label for="email">
               E-mail dele:
             </label>
-            <input type="email" name="email" id="email" required>   
+            <input type="email" name="email" id="friendEmail">   
           </div>
-          <button type="submit" class="btn btn__sectionEnd">Enviar agora</button>
+          <button type="submit" class="btn btn__sectionEnd" id="shareButton">Enviar agora</button>
         </form>
       </div>
     </section>
@@ -116,5 +116,6 @@
     </footer>
   </main>
   <script src="script.js"></script>
+  <script src="validation.js"></script>
 </body>
 </html>
