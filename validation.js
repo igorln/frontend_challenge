@@ -7,7 +7,6 @@ shareButton.addEventListener('click', (event) => {
   const reGex = /\S+@\S+\.\S+/;
   console.log(reGex.test(friendEmail.value))
   if (
-    friendName.value === "" ||
     friendName.value.length < 2
   ) {
     alert("Por favor, digite o nome do seu amigo corretamente.");
