@@ -83,6 +83,7 @@ nav {
   border: 1px solid var(--gray);
   border-radius: 4px;
   color: var(--text);
+  cursor: pointer;
   height: 40px;
   transition: all 0.2s;
 }

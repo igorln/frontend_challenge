@@ -24,7 +24,9 @@ function createProductItemElement({
   div.appendChild(createCustomElement('span', 'item__description', description));
   div.appendChild(createCustomElement('span', 'item__oldPrice', `De: R$${oldPrice}`));
   div.appendChild(createCustomElement('strong', 'item__price', `POR: R$${price}`));
-  div.appendChild(createCustomElement('span', 'item__installmentsCount', `ou ${installmentsCount}x de R$${installmentsValue}`));
+  div.appendChild(createCustomElement(
+    'span', 'item__installmentsCount', `ou ${installmentsCount}x de R$${installmentsValue}`
+  ));
   const createBtn = createCustomElement(
     'button',
     'btn item__btn',
@@ -35,31 +37,41 @@ function createProductItemElement({
   return section;
 }
 
-let pageNumber = 2;
+let pageNumber = 1;
+
+const itemsLimit = document.getElementById('redirectHome') === null ? 8 : 2;
 
 function fetchApi(page) {
   fetch(`https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=${page}`)
     .then((data) => data.json())
-    .then((response) => response.products.map((product) => {
-      const dataApi = createProductItemElement({
-        image: product.image,
-        name: product.name,
-        description: product.description,
-        oldPrice: product.oldPrice,
-        price: product.price,
-        installmentsCount: product.installments.count,
-        installmentsValue: product.installments.value,
-      });
-      return document.getElementById('productsList').appendChild(dataApi);
+    .then((response) => response.products.map((product, index) => {
+      if (index < itemsLimit) {
+        const dataApi = createProductItemElement({
+          image: product.image,
+          name: product.name,
+          description: product.description,
+          oldPrice: product.oldPrice,
+          price: product.price,
+          installmentsCount: product.installments.count,
+          installmentsValue: product.installments.value,
+        });
+        return document.getElementById('productsList').appendChild(dataApi);
+      }
     }));
+    pageNumber += 1;
 }
 
 function moreProductsButton() {
-  document.getElementById('moreProducts').addEventListener('click', () => fetchApi(pageNumber));
-  pageNumber += 1;
+  document.getElementById('moreProducts')
+  .addEventListener('click', () => fetchApi(pageNumber));
+}
+
+function redirectHomePage() {
+  document.getElementById('redirectHome')
+  .addEventListener('click', () => window.location = "index.html");
 }
 
 window.onload = function onload() {
-  fetchApi();
-  moreProductsButton();
+  fetchApi(pageNumber);
+  itemsLimit === 8 ? moreProductsButton() : redirectHomePage();
 };
