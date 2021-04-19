@@ -46,24 +46,24 @@ header:after {
   z-index: -1;
 }
 
-.header .container div {
+.header__text {
   margin-left: 7px;
 }
 
-.header .container div h2 {
+.header__text h2 {
   font-size:20px;
   font-weight: normal;
   line-height: 24px;
   margin: 0;
 }
 
-.header .container div h1 {
+.header__text h1 {
   font-size:40px;
   line-height: 49px;
   margin: 0;
 }
 
-.header .container div p {
+.header__text p {
   font-size:14px;
   line-height: 16px;
 }
@@ -263,7 +263,7 @@ footer:after {
   flex-wrap: wrap;
 }
 
-.product-description {
+.productDescription {
   display: flex;
   flex-direction: column;
   font-size: 12px;
@@ -401,7 +401,7 @@ footer:after {
     justify-content: space-between;
   }
 
-  .product-description {
+  .productDescription {
     margin: 0;
   }
 

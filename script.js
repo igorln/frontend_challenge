@@ -17,7 +17,7 @@ function createProductItemElement({
 }) {
   const section = document.createElement('section');
   const div = document.createElement('div');
-  div.className = 'product-description';
+  div.className = 'productDescription';
   section.className = 'item';
   section.appendChild(createProductImageElement(image));
   div.appendChild(createCustomElement('span', 'item__name', name));
