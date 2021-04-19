@@ -84,6 +84,12 @@ nav {
   border-radius: 4px;
   color: var(--text);
   height: 40px;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--gray);
+  color: var(--white);
 }
 
 nav .btn {
@@ -231,7 +237,7 @@ nav .btn {
 footer:after {
   background: var(--gray);
   content: '';
-  height: 100px;
+  height: 80px;
   left: 0;
   position: absolute;
   top: -63px;
@@ -271,6 +277,7 @@ footer:after {
   border: 1px solid var(--gray);
   height: 129px;
   width: 169px;
+  padding: 9px 11.8px;
 }
 
 .item__description {
@@ -310,6 +317,10 @@ footer:after {
 
   header:after {
     transform: skewY(8deg);
+  }
+
+  footer:after {
+    transform: skewY(-1.5deg);
   }
 }
 
