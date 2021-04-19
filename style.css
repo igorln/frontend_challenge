@@ -127,6 +127,11 @@ nav .btn {
   width: 100%;
 }
 
+.subscribeForm {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
 .subscribeForm label{
   font-size: 12px;
 }
@@ -321,6 +326,13 @@ footer:after {
 
   footer:after {
     transform: skewY(-1.5deg);
+  }
+}
+
+@media only screen and (max-width: 962px) {
+  .shareNewsletter form {
+    max-width: 400px;
+    margin: 0 auto;
   }
 }
 
