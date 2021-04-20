@@ -5,7 +5,6 @@ shareButton.addEventListener('click', (event) => {
   const friendName = document.getElementById('friendName')
   const friendEmail = document.getElementById('friendEmail')
   const reGex = /\S+@\S+\.\S+/;
-  console.log(reGex.test(friendEmail.value))
   if (
     friendName.value.length < 2
   ) {
